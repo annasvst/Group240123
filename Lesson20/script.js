@@ -1,3 +1,18 @@
+/* 
+The DOM (Document Object Model) is a programming interface for web documents.
+*/
+
+const heading = document.getElementById('heading');
+console.log(heading);
+heading.innerText = '<i>Hello 2</i>';
+
+const listItems = document.querySelectorAll('li');
+console.log(listItems);
+
+const emailInput = document.getElementsByName("email");
+console.log(emailInput);
+
+
 /* Methods for finding elements:
 1. getElementById - returns an element by its unique ID attribute.
 
@@ -60,14 +75,13 @@ Although a NodeList may resemble an array, it does not have all the properties a
 
 /* Method for modifying elements:
 
-1. innerHTML - sets or gets the HTML content (including tags) within an element.
+1. innerHTML - (DANGEROUS, use textContent or innerText instead) sets or gets the HTML content (including tags) within an element.
 const element = document.getElementById("exampleElement");
 element.innerHTML = "<p>This is a new paragraph.</p>";
 
 2. textContent - sets or gets the text content of an element, excluding any HTML tags.
 const element = document.getElementById("exampleElement");
 element.textContent = "This is some new text.";
-
 
 3. setAttribute - sets the value of an attribute for an element.
 const element = document.getElementById("exampleElement");
@@ -118,7 +132,8 @@ element.addEventListener("click", function(event) {
   // Your logic here
 });
 
-Possible events: click, mouseover, mouseout, keydown, keyup, submit, change, focus, blur, scroll, etc.
+Possible events: click, mouseover, mouseout,  submit (used for Forms), scroll, etc.
+Oftenly used for inputs: keydown, keyup, change, focus, blur (opposite to focus)
 
 
 Event object
@@ -129,6 +144,8 @@ Event.target refers to the element that triggered the event.
 const myButton = document.getElementById('my-button');
 
 myButton.addEventListener('click', function(event) {
+  alert('alert!');
+  console.log(event);
   if (event.target.tagName === 'BUTTON') {
     console.log('Button clicked!');
   } else if (event.target.tagName === 'A') {

@@ -1,6 +1,6 @@
-Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. One of the core concepts of functional programming is working with higher-order functions, which can take other functions as arguments or return them as results.
+In computer science, functional programming is a programming paradigm where programs are constructed by applying and composing functions. One of the core concepts of functional programming is working with higher-order functions, which can take other functions as arguments or return them as results.
 
-JavaScript provides several higher-order functions, such as .map() and .filter(), which are commonly used in functional programming. In this lesson, we'll explore these methods and understand how they can be used to manipulate arrays.
+JavaScript provides several higher-order functions, such as .map() and .filter(), .reduce(), which are commonly used in functional programming. In this lesson, we'll explore these methods and understand how they can be used to manipulate arrays.
 
 Here are some key concepts and techniques of functional programming in JavaScript:
 

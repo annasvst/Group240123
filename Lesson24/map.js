@@ -15,11 +15,20 @@ const wordsExercise1 = [
 	'island',
 	'jungle',
 ];
+const fruits = wordsExercise1.map(word => {
+	console.log(word.toUpperCase());
+
+	return word.toUpperCase()
+});
+console.log(fruits);
 
 // Exercise 2:
 // Given an array of numbers, square each number using .map().
 const numbersExercise2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+const squareNumber = numbersExercise2.map(number => number **2);
+console.log(squareNumber);
+console.log('numbersExercise2', numbersExercise2);
 
 // Exercise 3:
 // Given an array of objects representing products, extract an array of their names using .map().
@@ -85,6 +94,10 @@ const products = [
 		model: 'Charge 4',
 	},
 ];
+
+const names = products.map( product => {
+	return product.name;
+});
 
 // Exercise 4:
 // Given an array of words, find the length of each word using .map().

@@ -80,7 +80,6 @@ fetch('https://api.example.com/data', {
 */
 const API_KEY = 'qCnxm3oi9NS9mzAkGmh7_4B6V3p6DJnyFs_wKfNQFF4';
 
-
 fetch(`https://api.unsplash.com/photos/random?count=10&client_id=${API_KEY}`)
 .then(response => response.json())
 .then(data => console.log(data))

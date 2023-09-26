@@ -20,7 +20,7 @@ const myPromise = new Promise((resolve, reject) => {
     const randomValue = Math.random(); // Generate a random number
 
     // Simulate success (resolve) if the random number is greater than 0.5
-    if (randomValue > 0.5) {
+    if (randomValue > 1) {
       resolve(`Success! Random Value: ${randomValue}`);
     } else {
       // Simulate an error (reject) if the random number is 0.5 or less
@@ -30,22 +30,50 @@ const myPromise = new Promise((resolve, reject) => {
 });
 
 // Step 2: Using .then() to handle resolved Promise
-myPromise
-  .then((result) => {
-    console.log(result); // This code will execute if the Promise is resolved
-  })
-  .catch((error) => {
-    console.error(error); // This code will execute if the Promise is rejected
-  });
+// myPromise
+//   .then((result) => {
+//     console.log(result); // This code will execute if the Promise is resolved
+//   })
+//   .catch((error) => {
+//     console.error(error); // This code will execute if the Promise is rejected
+//   });
 
 console.log("Promise created. Waiting for it to resolve or reject...");
 
 
 /* Asyc / await syntax for working with Promises */
 
+const resolveMyPromise = async () => {
+  try {
+    const result = await myPromise;
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // Examples of making a function asyncronous
 // Function declaration
+async function getData() {
+  // some code to await
+};
 // Function expression
+const myData = async function () {
+
+};
 // Arrow function
+const promiseResult = async () => {
+  try {
+    const result = await myPromise;
+    
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    console.log('Function completed!');
+  }
+};
+
+promiseResult();
 
 // Try, catch, finally

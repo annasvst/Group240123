@@ -43,6 +43,7 @@ button.addEventListener('click', fetchImages);
 
 // Executing function: fetchImages()
 // Passing a function: fetchImages OR (param) => fetchImages(param)
+//Usually, paramater is event
 
 
 // ANNA to share information about calling a function or passing it 

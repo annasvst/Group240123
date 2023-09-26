@@ -83,9 +83,8 @@ const getPostsAndComments = async (response, comments) => {
   catch(error) {
     console.error(error);
   }
+
 };
-
-
 
 // 6.Convert the function below into asyncrounous function using async/await and try/catch syntax.
 

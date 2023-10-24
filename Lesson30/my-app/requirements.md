@@ -19,7 +19,7 @@ Design a link inside a component. Implement an event handler that prevents the d
 ## Exercise 7: Event Propagation
 Nest a child element within a parent element. Attach click event handlers to both elements, and observe the order in which the click events are triggered.
 
-## Exercise 8: Dynamic List Rendering
+## Exercise 8: Dynamic List Rendering (add these buttons to the existing todo list items in our application!)
 Render a list of items with buttons next to them. Clicking a button should remove the corresponding item from the list.
 
 ## Exercise 9: Multiple Buttons

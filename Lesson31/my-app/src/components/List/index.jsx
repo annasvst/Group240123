@@ -1,5 +1,6 @@
 import './styles.css';
 import {ListItem} from '../ListItem';
+import {useState} from 'react';
 
 export const List = () => {
   const data = [
@@ -11,10 +12,19 @@ export const List = () => {
     {id: 6, title: "Go running 4", completed: false},
   ];
 
+  const [todoItems, setTodoItems] = useState(data);
+
+
+  function handleDelete(id) {
+    setTodoItems(prevList => prevList.filter(prevItem => prevItem.id !== id));
+  }
+
 return (
   <ul className='todo-list'>
       {
-        data.map(listItem => <ListItem key={listItem.id} title={listItem.title} />)
+        todoItems.map(
+          listItem => <ListItem handleDelete={handleDelete} key={listItem.id} id={listItem.id} title={listItem.title} />
+        )
       }
   </ul>
 )

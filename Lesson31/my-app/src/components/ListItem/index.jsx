@@ -1,3 +1,10 @@
 import './styles.css';
 
-export const ListItem = ({title}) => <li>{title}</li>;
+export const ListItem = ({ id, title, handleDelete }) => {
+	return (
+		<li>
+			{title}
+			<button onClick={() => handleDelete(id)}>Delete Button</button>
+		</li>
+	);
+};

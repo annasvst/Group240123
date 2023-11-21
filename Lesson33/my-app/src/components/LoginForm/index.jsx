@@ -1,29 +1,26 @@
-import { useState } from 'react';
+import { useState } from "react"
 
 export const LoginForm = () => {
+  const[user,setUser] = useState({
+      email: '',
+      password: '',
+  });
 
-  return (
-    <>
-      <h2>Login Form (Controlled)</h2>
-      <form onSubmit={handleSubmit} className='form'>
-      <label htmlFor="username">
-        Username:
-      </label>
-        <input
-          id="username"
-          type="text"
-        />
-      
-      <label htmlFor="password">
-        Password:
-      </label>
-        <input
-          id="password"
-          type="password"
-        />
-      
-      <button type="submit">Submit</button>
-    </form>
-    </>
+  function handleSubmit () {
+    console.log(user);
+  }
+
+  return(
+    <div>
+        <form onSubmit={handleSubmit} >
+            <label htmlFor="email">Email: </label>
+            <input value={user.email} type="email" id="email" name="email" onChange={(e) => setUser({...user, email: e.target.value})}/>
+            <label htmlFor="password">Password: </label>
+            <input value={user.password} id="password" name="password" onChange={(e) => setUser({...user, password: e.target.value})}/>
+            <button type="submit">submit</button>
+        </form>
+        <p>{user.email}</p>
+        <p>{user.password}</p>
+    </div>
   );
-};
+}

@@ -11,7 +11,12 @@ export const UncontrolledInput = () => {
 			<form onSubmit={handleSubmit}>
 				<label>
 					Uncontrolled Input:
-					<input type='text' name='input' defaultValue="Enter your data..."/>
+					<input
+						type='text'
+						name='input'
+						// Default value not needed but could be used
+						defaultValue="Some default value"
+					/>
 				</label>
 				<button type='submit'>Submit</button>
 			</form>

@@ -1,7 +1,7 @@
 import { Card } from './components/Card';
 import { UncontrolledInput} from './components/UncontrolledInput'
 import {ControlledInput} from './components/ControlledInput';
-
+import { LoginForm } from './components/LoginForm';
 
 export const App = () => {
   
@@ -13,6 +13,7 @@ export const App = () => {
       <Card>
         <ControlledInput />
       </Card>
+      <LoginForm/>
     </div>
   );
 };

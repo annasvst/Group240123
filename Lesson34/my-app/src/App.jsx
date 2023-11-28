@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import {BD_SEARCH_BASE_URL} from './urls.js';
 import {RecipeList} from './components/RecipeList';
 import {SearchBar} from './components/SearchBar';
+import {NewRecipe} from './components/NewRecipe';
 
 export const App = () => {
   // 1. Fetch recipes data from an API (Get request, API key, useState to store data, useEffect)
@@ -31,6 +32,7 @@ export const App = () => {
   
 	return (
 		<div className='container'>
+      <NewRecipe />
       <SearchBar setRecipes={setRecipes}/>
       <RecipeList recipes={recipes} />
 		</div>

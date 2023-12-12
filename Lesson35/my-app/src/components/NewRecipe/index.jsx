@@ -13,6 +13,7 @@ export const NewRecipe = () => {
 
   // console.log(data);
   // setData();
+	console.log('Loading New Recipe page');
 	const {
 		register,
 		handleSubmit,

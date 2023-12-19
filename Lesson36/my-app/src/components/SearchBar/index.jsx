@@ -1,4 +1,4 @@
-
+import TextField from '@mui/material/TextField';
 import { useState } from "react";
 
 export const SearchBar = ({setRecipes}) => {
@@ -21,8 +21,9 @@ export const SearchBar = ({setRecipes}) => {
 
     return(
       <form onSubmit={handleSubmit}>
-          <input onChange={(event) => setValue(event.target.value)} value={value} type="text" />
-          <button type="submit">Search</button>
+        <TextField size="small" variant="outlined" onChange={(event) => setValue(event.target.value)} value={value} placeholder={'Recipe name...'} sx={
+          {width: '300px', borderColor: 'red'}
+          } />
       </form>
     )
 

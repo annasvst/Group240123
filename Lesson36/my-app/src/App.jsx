@@ -2,6 +2,8 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { BD_SEARCH_BASE_URL } from './urls.js';
 import {AppRouter} from './AppRouter.jsx';
+import { ThemeProvider } from '@mui/material';
+import {theme} from './theme.js';
 
 export const App = () => {
 	const [recipes, setRecipes] = useState([]);
@@ -13,8 +15,10 @@ export const App = () => {
 	}, []);
 
 	return (
-		<div className='container'>
-      <AppRouter recipes={recipes} setRecipes={setRecipes} />
+		<div className='app-container'>
+			<ThemeProvider theme={theme}>
+      	<AppRouter recipes={recipes} setRecipes={setRecipes} />
+			</ThemeProvider>
 			
 		</div>
 	);

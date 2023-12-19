@@ -4,6 +4,7 @@ import { NewRecipe } from './components/NewRecipe';
 import {UserPage} from './components/UserPage';
 import { RecipeDetail } from './components/RecipeDetail';
 import { Routes, Route } from 'react-router-dom';
+import {StyledPaper} from './components/StyledPaper';
 
 export const AppRouter = ({ recipes, setRecipes }) => {
 	return (
@@ -23,10 +24,10 @@ export const AppRouter = ({ recipes, setRecipes }) => {
 			<Route
 				path='/'
 				element={
-					<>
+					<StyledPaper>
 						<SearchBar setRecipes={setRecipes} />
 						<RecipeList recipes={recipes} />
-					</>
+					</StyledPaper>
 				}
 			/>
 		</Routes>

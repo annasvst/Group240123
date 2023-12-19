@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Button } from '@mui/material';
+import { StyledPaper} from '../StyledPaper';
 import './styles.css';
 
 export const RecipeDetail = () => {
@@ -15,11 +17,12 @@ export const RecipeDetail = () => {
 	}, [id]);
 
 	return recipe ? (
-		<div class='container'>
+		<StyledPaper class='container'>
 			<h1>{recipe.strMeal}</h1>
-			<img src={recipe.strMealThumb} alt={recipe.strMeal} />
+			<img className='recipe-image' src={recipe.strMealThumb} alt={recipe.strMeal} />
 			<p>{recipe.strInstructions}</p>
-		</div>
+      <Button color='primary'>Go back</Button>
+		</StyledPaper>
 	) : (
 		<div>Loading...</div>
 	);

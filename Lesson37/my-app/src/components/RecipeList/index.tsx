@@ -6,8 +6,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import './styles.css';
+import { Recipe } from '../../modules/recipes/models';
 
-export const RecipeList = ({ recipes }) => {
+interface RecipeListProps {
+	recipes: Recipe[];
+}
+
+export const RecipeList = ({recipes}: RecipeListProps) => {
 	return (
 		<div>
 			<Typography variant='h3' sx={{ textAlign: 'center' }}>
@@ -25,7 +30,7 @@ export const RecipeList = ({ recipes }) => {
 										title={recipe.strMeal}
 									/>
 									<CardContent>
-										<Typography gutterBottom variant='headline' component='div'>
+										<Typography gutterBottom variant='subtitle1' component='div'>
 											{recipe.strMeal}
 										</Typography>
 									</CardContent>

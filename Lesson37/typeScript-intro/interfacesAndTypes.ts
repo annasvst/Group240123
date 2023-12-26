@@ -9,9 +9,9 @@ const user2: User = { id: 1, name: "Jane", age: 20 };
 
 interface AdminUser extends User {
   superAdmin: boolean;
-}
+} 
 
-const user3: AdminUser = { id: 1, name: "Jane", age: 20, superAdmin: false };
+const user3: AdminUser = { id: 1, name: "Jane", superAdmin: false };
 
 
 type ID = string | number;

@@ -1,16 +1,29 @@
 import { useForm } from 'react-hook-form';
 import './styles.css';
+import { Category, allCategories } from '../../modules/recipes/models';
+
+interface NewRecipe {
+	strMeal: string;
+	strDrinkAlternate?: string;
+	strCategory: Category;
+	strCategoryOther: string;
+}
 
 export const NewRecipe = () => {
 	const {
 		register,
 		handleSubmit,
-		watch,
 		formState: { errors },
-	} = useForm();
+	} = useForm({
+		defaultValues: {
+			strMeal: '',
+			strDrinkAlternate: '',
+			strCategory: Category.Undefined,
+			strCategoryOther: '',
+		},
+	});
 
-	const strCategory = watch('strCategory');
-	const onSubmit = (data) => console.log(data);
+	const onSubmit = (data: NewRecipe) => console.log(data);
 
 	return (
 		<form
@@ -42,24 +55,27 @@ export const NewRecipe = () => {
 				id='strCategory'
 				{...register('strCategory', { required: true, minLength: 1 })}
 			>
-				<option value=''>Select category</option>
-				<option value='Side'>Side</option>
-				<option value='Main'>Main</option>
-				<option value='Dessert'>Dessert</option>
-				<option value='Other'>Other</option>
+				{allCategories.map((category) => {
+					if (category === Category.Undefined) {
+						return (
+							<option key={category} value={category}>
+								Select category
+							</option>
+						);
+					} else {
+						return (
+							<option key={category} value={category}>
+								{category}
+							</option>
+						);
+					}
+				})}
 			</select>
 			{errors.strCategory && (
 				<span className='input-error'>Category is required</span>
 			)}
-			{strCategory === 'Other' && (
-				<input
-					type='text'
-					{...register('strCategoryOther', { required: true, minLength: 3 })}
-					placeholder='Please enter category...'
-				/>
-			)}
 
-			<button type='Submit'>Submit</button>
+			<button type='submit'>Submit</button>
 		</form>
 	);
 };

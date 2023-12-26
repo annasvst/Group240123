@@ -1,5 +1,11 @@
 // Simple Function Type
-const greet: (name: string) => string = function (name: string) {
+
+// JS:
+// const greet = function (name) {
+// 	return `Hello, ${name}!`;
+// };
+
+const greet: (name: string) => string = function (name) {
 	return `Hello, ${name}!`;
 };
 
@@ -16,10 +22,18 @@ let logMessage: (message: string, userId?: string) => void = function (
 logMessage('Test message');
 
 // Function Type for Callbacks
+
+
+// const processUserInput = function (input, callback) {
+// 	// Process the input...
+// 	const response = `Processed input: ${input}`;
+// 	callback(response);
+// };
+
 const processUserInput: (
 	input: string,
 	callback: (response: string) => void
-) => void = function (input: string, callback: (response: string) => void) {
+) => void = function (input, callback) {
 	// Process the input...
 	const response = `Processed input: ${input}`;
 	callback(response);

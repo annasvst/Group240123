@@ -9,15 +9,22 @@ const isActive: boolean = true;
 
 // Arrays can be written in two ways: Type[] or Array<Type>.
 const list: number[] = [1, 2, 3];
-const anotherList: Array<number> = [1, 2, 3];
+const anotherList: Array<string> = ['1', '2', '3'];
 
 // Tuples allow you to express an array where the type of a fixed number of elements is known, but need not be the same.
 const person: [string, number] = ["Alice", 30]; // A tuple of string and number
 
 // Enums are a way of giving more friendly names to sets of numeric values.
-enum Color {Red, Green, Blue}
+enum Color {Red, Green, Blue};
 
 const primaryColor: Color = Color.Green;
+
+enum Weekdays {
+  MO = 'Monday',
+  TUE = 'Tuesday',
+  WED = 'Wednesday'
+  //...
+};
 
 // The any type allows for any type of value, opting out of type-checking. Use this sparingly as it defeats the purpose of TypeScript.
 let notSure: any = 4;

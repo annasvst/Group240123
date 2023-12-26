@@ -73,5 +73,10 @@ export const allCategories = [
 	Category.Chicken,
 	Category.Dessert,
 	Category.Lamb,
+	Category.Miscellaneous,
+	Category.Pasta,
+	Category.Pork,
+	Category.Seafood,
+	Category.Side,
 	Category.Undefined,
 ];

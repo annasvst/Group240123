@@ -29,10 +29,14 @@ export const Counter = () => {
 	const initialState = { count: 0 };
 	const [state, dispatch] = useReducer(reducer, initialState);
 
+	function handeIncrease () {
+		dispatch({ type: CounterActionType.INCREMENT })
+	};
+
 	return (
 		<>
 			Count: {state.count}
-			<button onClick={() => dispatch({ type: CounterActionType.INCREMENT })}>
+			<button onClick={ handeIncrease }>
 				+
 			</button>
 			<button onClick={() => dispatch({ type: CounterActionType.DECREMENT })}>

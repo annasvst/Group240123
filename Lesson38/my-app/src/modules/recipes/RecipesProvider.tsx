@@ -35,12 +35,16 @@ function recipesReducer(recipes: Recipe[], action: RecipeAction) {
 				(payloadItem) =>
 					!recipes.some((recipe) => recipe.idMeal === payloadItem.idMeal)
 			);
-			return (recipes = [...recipes, ...newRecipes]);
+			console.log('Updating recipes', [...recipes, ...newRecipes]);
+			return [...recipes, ...newRecipes];
+		}
+		case RecipeActionType.REMOVE_ALL: {
+			return [];
 		}
 		default:
 			throw Error(`Action type ${action.type} is not supported`);
 	}
-}
+};
 
 // Custom hooks for consuming created contexts
 export const useRecipes = () => useContext(RecipesContext);

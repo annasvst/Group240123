@@ -8,10 +8,16 @@ export const SimpleCounter = () => {
 	const initialState = { count: 0 };
 	const [state, setState] = useState(initialState);
 
+	function handeIncrease () {
+		setState((prevState: Count) => (
+			{ count: prevState.count + 1 }
+		));
+	}
+
 	return (
 		<>
 			Count: {state.count}
-			<button onClick={() => setState((prevState: Count) => ({ count: prevState.count + 1 }))}>
+			<button onClick={handeIncrease}>
 				+
 			</button>
 			<button onClick={() => setState((prevState: Count) => ({ count: prevState.count - 1 }))}>

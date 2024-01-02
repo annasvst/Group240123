@@ -3,22 +3,32 @@ import { useState, useEffect } from 'react';
 import { Button, Typography } from '@mui/material';
 import { StyledPaper } from '../StyledPaper';
 import { useNavigate } from 'react-router-dom';
-import {Recipe} from '../../modules/recipes/models';
+import { Recipe } from '../../modules/recipes/models';
+import { useRecipes } from '../../modules/recipes/RecipesProvider';
 
 import './styles.css';
 
 export const RecipeDetail = () => {
 	let { id } = useParams();
-	const [recipe, setRecipe] = useState<Recipe|undefined>(undefined);
+	const [recipe, setRecipe] = useState<Recipe | undefined>(undefined);
 	const navigate = useNavigate();
+
+	const contextRecipes = useRecipes();
 
 	useEffect(() => {
 		if (id) {
-			fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-				.then((response) => response.json())
-				.then((data) => setRecipe(data.meals[0]));
+			const currentRecipes: Recipe[] = contextRecipes.filter(
+				(recipe) => recipe.idMeal === id
+			);
+			if (currentRecipes.length > 0) {
+				setRecipe(currentRecipes[0]);
+			} else {
+				fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+					.then((response) => response.json())
+					.then((data) => setRecipe(data.meals[0]));
+			}
 		}
-	}, [id]);
+	}, [id, contextRecipes]);
 
 	const handleGoBack = () => {
 		navigate(-1);

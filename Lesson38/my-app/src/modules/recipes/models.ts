@@ -83,6 +83,7 @@ export const allCategories = [
 
 export enum RecipeActionType {
 	ADD_RECIPES = 'addRecipes',
+	REMOVE_ALL = 'removeAll'
 }
 
 export interface RecipeAction {

@@ -8,7 +8,8 @@ import { theme } from './theme.js';
 import { Navbar } from './components/Navbar';
 import { useRecipesDispatch } from './modules/recipes/RecipesProvider';
 import { RecipeActionType } from './modules/recipes/models';
-import {UserProvider} from './modules/user'
+import {UserProvider} from './modules/user/UserProvider';
+
 export const App = () => {
 	const [recipes, setRecipes] = useState([]);
 	const dispatch = useRecipesDispatch();

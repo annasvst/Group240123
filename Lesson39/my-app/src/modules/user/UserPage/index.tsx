@@ -41,12 +41,14 @@ export const UserPage = () => {
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
 				<TextField
 					fullWidth
+          role="user-name-input"
 					id='user-name-input'
 					label='User Name'
 					variant='standard'
 					{...register('userName', { required: true })}
 					error={!!errors.userName}
 					helperText={errors.userName && 'Please enter a user name'}
+          data-testid={'user-name-input'}
 				/>
 				<TextField
 					fullWidth
@@ -77,7 +79,7 @@ export const UserPage = () => {
 					flexWrap='wrap'
 					sx={{ marginTop: 2 }}
 				>
-					<Button type='submit' variant='contained'>
+					<Button data-testid={'submit-btn'} type='submit' variant='contained'>
 						Save changes
 					</Button>
 					<Button type='reset' color='warning' variant='contained'>
@@ -91,6 +93,7 @@ export const UserPage = () => {
 				onClose={() => setShowDialog(false)}
 				aria-labelledby='alert-dialog-title'
 				aria-describedby='alert-dialog-description'
+        data-testid={'dialog'}
 			>
 				<DialogTitle id='alert-dialog-title'>
 					Update successful!

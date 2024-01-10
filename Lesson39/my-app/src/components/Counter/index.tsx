@@ -39,11 +39,11 @@ export const Counter = ({initialState}: CounterProps) => {
 
 	return (
 		<>
-			Count: {state.count}
-			<button onClick={ handeIncrease }>
+			Count: <span data-testid={'count-amount'}>{state.count}</span>
+			<button data-testid={'plus-button'} onClick={ handeIncrease }>
 				+
 			</button>
-			<button onClick={() => dispatch({ type: CounterActionType.DECREMENT })}>
+			<button data-testid={'minus-button'} onClick={() => dispatch({ type: CounterActionType.DECREMENT })}>
 				-
 			</button>
 		</>

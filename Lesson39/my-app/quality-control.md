@@ -1,3 +1,5 @@
+TDD - test driven development
+
 # Types of tests:
 - Unit Testing: Test individual components and functions in isolation. You can use tools like Jest and React Testing Library for this. Write tests to cover various scenarios, including edge cases.
 

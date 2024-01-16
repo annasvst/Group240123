@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BD_SEARCH_BASE_URL } from './urls';
 import Box from '@mui/material/Box';
 import { AppRouter } from './AppRouter';
@@ -11,7 +11,6 @@ import { RecipeActionType } from './modules/recipes/models';
 import {UserProvider} from './modules/user/UserProvider';
 
 export const App = () => {
-	const [recipes, setRecipes] = useState([]);
 	const dispatch = useRecipesDispatch();
 
 	useEffect(() => {
@@ -19,7 +18,6 @@ export const App = () => {
 			.then((response) => response.json())
 			.then((data) => {
 				if (data.meals) {
-					setRecipes(data.meals);
 					dispatch({type: RecipeActionType.ADD_RECIPES, payload: data.meals});
 				}
 			});
@@ -31,7 +29,7 @@ export const App = () => {
 				<UserProvider>
 				<Navbar />
 					<Box sx={{ mt: theme.spacing(10) }}>
-						<AppRouter recipes={recipes} setRecipes={setRecipes} />
+						<AppRouter />
 					</Box>
 				</UserProvider>
 			</ThemeProvider>

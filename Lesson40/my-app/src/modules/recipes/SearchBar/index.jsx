@@ -1,8 +1,11 @@
 import TextField from '@mui/material/TextField';
+import {useRecipesDispatch} from '../RecipesProvider';
+import { RecipeActionType } from '../models';
 import { useState } from "react";
 
-export const SearchBar = ({setRecipes}) => {
+export const SearchBar = () => {
     const [value, setValue] = useState("");
+    const dispatch = useRecipesDispatch();
 
     function handleSubmit (event) {
         event.preventDefault();
@@ -11,9 +14,7 @@ export const SearchBar = ({setRecipes}) => {
         .then(response => response.json())
         .then(data => {
           if (data.meals) {
-            setRecipes(data.meals);
-          } else {
-            setRecipes([]);
+            dispatch({type: RecipeActionType.ADD_RECIPES, payload: data.meals});
           }
           setValue("");
         });

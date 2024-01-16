@@ -6,7 +6,7 @@ import { RecipeDetail } from './modules/recipes/RecipeDetail';
 import { Routes, Route } from 'react-router-dom';
 import {StyledPaper} from './components/StyledPaper';
 
-export const AppRouter = ({ recipes, setRecipes }) => {
+export const AppRouter = () => {
 	return (
 		<Routes>
 
@@ -28,8 +28,8 @@ export const AppRouter = ({ recipes, setRecipes }) => {
 				path='/'
 				element={
 					<StyledPaper>
-						<SearchBar setRecipes={setRecipes} />
-						<RecipeList recipes={recipes} />
+						<SearchBar />
+						<RecipeList />
 					</StyledPaper>
 				}
 			/>

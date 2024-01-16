@@ -5,23 +5,24 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import './styles.css';
 import { Recipe } from '../models';
+import { useRecipes } from '../RecipesProvider';
+import './styles.css';
 
-interface RecipeListProps {
-	recipes: Recipe[];
-}
 
-export const RecipeList = ({recipes}: RecipeListProps) => {
+export const RecipeList = () => {
+	const recipes = useRecipes();
+
 	return (
 		<div>
-			<Typography variant='h3' sx={{ textAlign: 'center' }}>
+			<Typography variant='h3' sx={{ textAlign: 'center' }} data-testid='recipe-list-title'> 
 				Recipes
 			</Typography>
-			<ul className='recipe-list'>
-				{recipes.map((recipe) => {
+			<ul className='recipe-list' data-testid='recipe-list'>
+				{recipes.map((recipe: Recipe) => {
 					return (
-						<li key={recipe.idMeal}>
+						<li data-testid='recipe-list-item'
+						key={recipe.idMeal}>
 							<Link to={`recipes/${recipe.idMeal}`} className='recipe-link'>
 								<Card className='card'>
 									<CardMedia

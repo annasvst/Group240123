@@ -35,7 +35,7 @@ export const RecipeDetail = () => {
 	};
 
 	return recipe ? (
-		<StyledPaper className='container'>
+		<StyledPaper dataTestid='recipe-detail-container' className='container'>
 			<Typography variant='h4'>{recipe.strMeal}</Typography>
 			<img
 				className='recipe-image'
@@ -48,6 +48,6 @@ export const RecipeDetail = () => {
 			</Button>
 		</StyledPaper>
 	) : (
-		<div>Loading...</div>
+		<div data-testid='loading-container' >Loading...</div>
 	);
 };

@@ -3,14 +3,15 @@ import { useTheme } from '@mui/material/styles';
 
 interface StyledPaperProps {
   className?: string;
+  dataTestid?: string;
   children: React.ReactNode;
 }
 
-export const StyledPaper = ({className, children}: StyledPaperProps) => {
+export const StyledPaper = ({className, dataTestid, children}: StyledPaperProps) => {
   const theme = useTheme();
 
   return (
-    <Paper elevation={10} className={className} sx={
+    <Paper data-testid={dataTestid} elevation={10} className={className} sx={
       { padding: theme.spacing(2),
         width: '100vw',
         maxWidth: '600px',

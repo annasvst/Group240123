@@ -13,6 +13,8 @@ import './styles.css';
 export const RecipeList = () => {
 	const recipes = useRecipes();
 
+	console.log('Recipes in RecipeList component: ', recipes);
+
 	return (
 		<div>
 			<Typography variant='h3' sx={{ textAlign: 'center' }} data-testid='recipe-list-title'> 

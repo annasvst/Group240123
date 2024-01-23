@@ -4,20 +4,20 @@ import { Button, Typography } from '@mui/material';
 import { StyledPaper } from '../../../components/StyledPaper';
 import { useNavigate } from 'react-router-dom';
 import { Recipe } from '../models';
-import { useRecipes } from '../RecipesProvider';
-
+import { selectorRecipes } from '../recipesSlice';
+import { useSelector } from 'react-redux';
 import './styles.css';
+
 
 export const RecipeDetail = () => {
 	let { id } = useParams();
 	const [recipe, setRecipe] = useState<Recipe | undefined>(undefined);
 	const navigate = useNavigate();
-
-	const contextRecipes = useRecipes();
+	const storedRecipes = useSelector(selectorRecipes);
 
 	useEffect(() => {
 		if (id) {
-			const currentRecipes: Recipe[] = contextRecipes.filter(
+			const currentRecipes: Recipe[] = storedRecipes.filter(
 				(recipe) => recipe.idMeal === id
 			);
 			if (currentRecipes.length > 0) {
@@ -28,7 +28,7 @@ export const RecipeDetail = () => {
 					.then((data) => setRecipe(data.meals[0]));
 			}
 		}
-	}, [id, contextRecipes]);
+	}, [id, storedRecipes]);
 
 	const handleGoBack = () => {
 		navigate(-1);

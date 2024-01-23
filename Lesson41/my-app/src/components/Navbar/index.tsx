@@ -14,6 +14,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
 import ListItemButton from '@mui/material/ListItemButton';
+import { useDispatch } from 'react-redux';
+import { logIn, logOut } from '../../modules/user/userSlice';
 
 interface Props {
 	/**
@@ -35,6 +37,8 @@ const navItems = [
 export const Navbar = (props: Props) => {
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = React.useState(false);
+
+	const dispatch = useDispatch();
 
 	const handleDrawerToggle = () => {
 		setMobileOpen((prevState) => !prevState);
@@ -59,12 +63,12 @@ export const Navbar = (props: Props) => {
 					</ListItem>
 				))}
 				<ListItem disablePadding>
-					<ListItemButton onClick={() => console.log('Signing in...')}>
+					<ListItemButton onClick={() => dispatch(logIn())}>
 						<ListItemText primary={'Sign in'} />
 					</ListItemButton>
 				</ListItem>
 				<ListItem disablePadding>
-					<ListItemButton onClick={() => console.log('Signing out...')}>
+					<ListItemButton onClick={() => dispatch(logOut())}>
 						<ListItemText primary={'Sign out'} />
 					</ListItemButton>
 				</ListItem>
@@ -108,13 +112,13 @@ export const Navbar = (props: Props) => {
 						))}
 						<Button
 							sx={{ color: '#fff' }}
-							onClick={() => console.log('Signing in...')}
+							onClick={() => dispatch(logIn())}
 						>
 							Sign in
 						</Button>
 						<Button
 							sx={{ color: '#fff' }}
-							onClick={() => console.log('Signing out...')}
+							onClick={() => dispatch(logOut())}
 						>
 							Sign out
 						</Button>

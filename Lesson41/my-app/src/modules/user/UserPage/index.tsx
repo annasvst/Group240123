@@ -9,6 +9,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useDispatch } from 'react-redux';
+import { updateUserData } from '../userSlice';
 
 interface UserData {
 	userName: string;
@@ -29,26 +31,27 @@ export const UserPage = () => {
 		},
 	});
 
+	const dispatch = useDispatch();
 	const [showDialog, setShowDialog] = useState(false);
 
 	const onSubmit = (data: UserData) => {
-    console.log(data);
-    setShowDialog(true);
-  };
+		dispatch(updateUserData(data));
+		setShowDialog(true);
+	};
 
 	return (
 		<StyledPaper>
 			<form onSubmit={handleSubmit(onSubmit)} noValidate>
 				<TextField
 					fullWidth
-          role="user-name-input"
+					role='user-name-input'
 					id='user-name-input'
 					label='User Name'
 					variant='standard'
 					{...register('userName', { required: true })}
 					error={!!errors.userName}
 					helperText={errors.userName && 'Please enter a user name'}
-          data-testid={'user-name-input'}
+					data-testid={'user-name-input'}
 				/>
 				<TextField
 					fullWidth
@@ -93,11 +96,9 @@ export const UserPage = () => {
 				onClose={() => setShowDialog(false)}
 				aria-labelledby='alert-dialog-title'
 				aria-describedby='alert-dialog-description'
-        data-testid={'dialog'}
+				data-testid={'dialog'}
 			>
-				<DialogTitle id='alert-dialog-title'>
-					Update successful!
-				</DialogTitle>
+				<DialogTitle id='alert-dialog-title'>Update successful!</DialogTitle>
 				<DialogContent>
 					<DialogContentText id='alert-dialog-description'>
 						The account information has been successfully updated.

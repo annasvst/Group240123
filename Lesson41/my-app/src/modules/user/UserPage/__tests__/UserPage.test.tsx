@@ -1,6 +1,13 @@
 import {UserPage} from '../index';
 import {render, screen, fireEvent} from '@testing-library/react';
 
+jest.mock('react-redux', function () {
+	return { 
+		...jest.requireActual('react-redux'),
+		useDispatch: () => jest.fn()
+	};
+});
+
 describe('<UserPage /> component', function () {
   it('should render correctly', function () {
     render(<UserPage />);
@@ -19,7 +26,6 @@ describe('<UserPage /> component', function () {
     const usernameInput = screen.getByLabelText("User Name");
     const emailInput = screen.getByLabelText("Email");
     const passwordInput = screen.getByLabelText("Password");
-
 
     fireEvent.change(usernameInput, {target: {value: 'John Doe'}});
     fireEvent.change(emailInput, {target: {value: 'John@gmail.com'}});

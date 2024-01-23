@@ -1,11 +1,11 @@
 import TextField from '@mui/material/TextField';
-import {useRecipesDispatch} from '../RecipesProvider';
-import { RecipeActionType } from '../models';
 import { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { addRecipes } from '../recipesSlice';
 
 export const SearchBar = () => {
     const [value, setValue] = useState("");
-    const dispatch = useRecipesDispatch();
+    const dispatch = useDispatch();
 
     function handleSubmit (event) {
         event.preventDefault();
@@ -14,7 +14,7 @@ export const SearchBar = () => {
         .then(response => response.json())
         .then(data => {
           if (data.meals) {
-            dispatch({type: RecipeActionType.ADD_RECIPES, payload: data.meals});
+            dispatch(addRecipes(data.meals));
           }
           setValue("");
         });

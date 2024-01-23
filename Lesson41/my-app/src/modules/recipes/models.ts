@@ -81,12 +81,9 @@ export const allCategories = [
 	Category.Undefined,
 ];
 
-export enum RecipeActionType {
-	ADD_RECIPES = 'addRecipes',
-	REMOVE_ALL = 'removeAll'
+export interface RecipesSliceState {
+  recipes: RecipesInitialState;
 }
-
-export interface RecipeAction {
-	type: RecipeActionType;
-	payload: Recipe[];
+export interface RecipesInitialState {
+  data: Recipe[];
 }

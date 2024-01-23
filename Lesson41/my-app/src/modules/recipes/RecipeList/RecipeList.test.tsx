@@ -1,16 +1,19 @@
 import { RecipeList } from './index';
 import { render, screen } from '@testing-library/react';
 import { mockRecipes } from '../../../utils/test-utils';
-import { useRecipes } from '../RecipesProvider';
 import { BrowserRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-jest.mock('../RecipesProvider', function () {
-	return { useRecipes: jest.fn() };
+jest.mock('react-redux', function () {
+	return { 
+		...jest.requireActual('react-redux'),
+		useSelector: jest.fn()
+	};
 });
 
 describe('<RecipeList /> component', function () {
 	it('should render correctly', function () {
-		(useRecipes as jest.Mock).mockReturnValue([]);
+		(useSelector as jest.Mock).mockReturnValue([]);
 
 		render(<RecipeList />);
 		const title = screen.getByTestId('recipe-list-title');
@@ -22,7 +25,7 @@ describe('<RecipeList /> component', function () {
 	});
 
 	it('should render recipe cards', function () {
-		(useRecipes as jest.Mock).mockReturnValue(mockRecipes);
+		(useSelector as jest.Mock).mockReturnValue(mockRecipes);
 
 		render(
 			<BrowserRouter>

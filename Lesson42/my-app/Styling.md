@@ -12,7 +12,7 @@ Setup: Also supported by default. Just create your .css files and import them in
 
 Setup: CRA has built-in support for CSS Modules. Just name your stylesheet files as [name].module.css, and you're good to go.
 
-4. *Styled Components*: If you're into the JavaScript-in-CSS vibe, this is for you. Styled components let you write actual CSS in your JavaScript file, using tagged template literals. It's like merging styles and components into one, which can be really powerful for component-based designs.
+4. *Styled Components* (CSS-in-JS): If you're into the JavaScript-in-CSS vibe, this is for you. Styled components let you write actual CSS in your JavaScript file, using tagged template literals. It's like merging styles and components into one, which can be really powerful for component-based designs.
 
 Setup: You'll need to install the styled-components package. After that, you can start using it in your components directly.
 E.g. if you use Material UI, check this guide: https://mui.com/material-ui/getting-started/installation/#with-styled-components

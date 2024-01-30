@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material';
 
 const StyledCard = styled.div`
-  color: var(--color-primary);
+  color: ${props => props.color ?? 'var(--color-primary)'};
   text-align: center;
   background-color: var(--color-lighter);
   border-radius: 5px;
@@ -18,10 +19,17 @@ const StyledParagraph = styled(Typography)`
 
 
 export const StyledComponentsExample = () => {
+  const theme = useTheme();
   return (
-    <StyledCard>
+    <>
+    <StyledCard color={theme.palette.primary.main}>
       <h1>This is Styled Components Example component</h1>
       <StyledParagraph variant='body1'>If you're into the JavaScript-in-CSS vibe, this is for you. Styled components let you write actual CSS in your JavaScript file, using tagged template literals. It's like merging styles and components into one, which can be really powerful for component-based designs.</StyledParagraph>
     </StyledCard>
+    <StyledCard>
+    <h1>This is Styled Components Example component</h1>
+    <StyledParagraph variant='body1'>If you're into the JavaScript-in-CSS vibe, this is for you. Styled components let you write actual CSS in your JavaScript file, using tagged template literals. It's like merging styles and components into one, which can be really powerful for component-based designs.</StyledParagraph>
+  </StyledCard>
+  </>
   );
 };

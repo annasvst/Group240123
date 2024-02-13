@@ -1,12 +1,12 @@
-import { useForm } from 'react-hook-form'
-import './styles.css'
-import { Category, allCategories } from '../models'
+import { useForm } from 'react-hook-form';
+import './styles.css';
+import { Category, allCategories } from '../models';
 
 interface NewRecipe {
-  strMeal: string
-  strDrinkAlternate?: string
-  strCategory: Category
-  strCategoryOther: string
+  strMeal: string;
+  strDrinkAlternate?: string;
+  strCategory: Category;
+  strCategoryOther: string;
 }
 
 export const NewRecipe = () => {
@@ -21,9 +21,9 @@ export const NewRecipe = () => {
       strCategory: Category.Undefined,
       strCategoryOther: '',
     },
-  })
+  });
 
-  const onSubmit = (data: NewRecipe) => console.log(data)
+  const onSubmit = (data: NewRecipe) => console.log(data);
 
   return (
     <form
@@ -61,13 +61,13 @@ export const NewRecipe = () => {
               <option key={category} value={category}>
                 Select category
               </option>
-            )
+            );
           } else {
             return (
               <option key={category} value={category}>
                 {category}
               </option>
-            )
+            );
           }
         })}
       </select>
@@ -77,5 +77,5 @@ export const NewRecipe = () => {
 
       <button type='submit'>Submit</button>
     </form>
-  )
-}
+  );
+};

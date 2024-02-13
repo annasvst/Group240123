@@ -1,23 +1,23 @@
-import TextField from '@mui/material/TextField'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { addRecipes } from '../recipesSlice'
+import TextField from '@mui/material/TextField';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addRecipes } from '../recipesSlice';
 
 export const SearchBar = () => {
-  const [value, setValue] = useState('')
-  const dispatch = useDispatch()
+  const [value, setValue] = useState('');
+  const dispatch = useDispatch();
 
   function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
 
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${value}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.meals) {
-          dispatch(addRecipes(data.meals))
+          dispatch(addRecipes(data.meals));
         }
-        setValue('')
-      })
+        setValue('');
+      });
   }
 
   return (
@@ -31,5 +31,5 @@ export const SearchBar = () => {
         sx={{ width: '100%' }}
       />
     </form>
-  )
-}
+  );
+};

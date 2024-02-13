@@ -1,48 +1,48 @@
-import * as React from 'react'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import CssBaseline from '@mui/material/CssBaseline'
-import Divider from '@mui/material/Divider'
-import Drawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
-import MenuIcon from '@mui/icons-material/Menu'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
-import { NavLink } from 'react-router-dom'
-import ListItemButton from '@mui/material/ListItemButton'
-import { useDispatch } from 'react-redux'
-import { logIn, logOut } from '../../modules/user/userSlice'
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { NavLink } from 'react-router-dom';
+import ListItemButton from '@mui/material/ListItemButton';
+import { useDispatch } from 'react-redux';
+import { logIn, logOut } from '../../modules/user/userSlice';
 
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
    */
-  window?: () => Window
+  window?: () => Window;
 }
 
-const drawerWidth = 240
+const drawerWidth = 240;
 const navItems = [
   { title: 'Home', location: '/' },
   { title: 'New Recipe', location: '/recipes/new' },
   { title: 'Account', location: '/user' },
   // {title: 'Log in', location: '/log-in'},
   // {title: 'Sign up', location: '/sign-up'},
-]
+];
 
 export const Navbar = (props: Props) => {
-  const { window } = props
-  const [mobileOpen, setMobileOpen] = React.useState(false)
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState)
-  }
+    setMobileOpen((prevState) => !prevState);
+  };
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
@@ -72,10 +72,10 @@ export const Navbar = (props: Props) => {
         </ListItem>
       </List>
     </Box>
-  )
+  );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -138,5 +138,5 @@ export const Navbar = (props: Props) => {
         </Drawer>
       </nav>
     </Box>
-  )
-}
+  );
+};

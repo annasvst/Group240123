@@ -1,21 +1,21 @@
-import { StyledPaper } from '../../../components/StyledPaper'
-import TextField from '@mui/material/TextField'
-import Button from '@mui/material/Button'
-import Stack from '@mui/material/Stack'
-import { useForm } from 'react-hook-form'
-import { useState } from 'react'
-import Dialog from '@mui/material/Dialog'
-import DialogActions from '@mui/material/DialogActions'
-import DialogContent from '@mui/material/DialogContent'
-import DialogContentText from '@mui/material/DialogContentText'
-import DialogTitle from '@mui/material/DialogTitle'
-import { useDispatch } from 'react-redux'
-import { updateUserData } from '../userSlice'
+import { StyledPaper } from '../../../components/StyledPaper';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { useDispatch } from 'react-redux';
+import { updateUserData } from '../userSlice';
 
 interface UserData {
-  userName: string
-  email: string
-  password: string
+  userName: string;
+  email: string;
+  password: string;
 }
 
 export const UserPage = () => {
@@ -29,15 +29,15 @@ export const UserPage = () => {
       email: '',
       password: '',
     },
-  })
+  });
 
-  const dispatch = useDispatch()
-  const [showDialog, setShowDialog] = useState(false)
+  const dispatch = useDispatch();
+  const [showDialog, setShowDialog] = useState(false);
 
   const onSubmit = (data: UserData) => {
-    dispatch(updateUserData(data))
-    setShowDialog(true)
-  }
+    dispatch(updateUserData(data));
+    setShowDialog(true);
+  };
 
   return (
     <StyledPaper>
@@ -111,5 +111,5 @@ export const UserPage = () => {
         </DialogActions>
       </Dialog>
     </StyledPaper>
-  )
-}
+  );
+};

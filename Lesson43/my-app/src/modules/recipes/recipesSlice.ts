@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { Recipe, RecipesInitialState, RecipesSliceState } from './models'
+import { createSlice } from '@reduxjs/toolkit';
+import { Recipe, RecipesInitialState, RecipesSliceState } from './models';
 
 const initialState: RecipesInitialState = {
   data: [],
-}
+};
 
 export const recipesSlice = createSlice({
   name: 'recipes',
@@ -15,18 +15,18 @@ export const recipesSlice = createSlice({
           !state.data.some(
             (recipe: Recipe) => recipe.idMeal === payloadItem.idMeal,
           ),
-      )
+      );
 
-      state.data = [...state.data, ...newRecipes]
+      state.data = [...state.data, ...newRecipes];
     },
     removeAll: (state) => {
-      state.data = []
+      state.data = [];
     },
   },
-})
+});
 
-export const { addRecipes, removeAll } = recipesSlice.actions
+export const { addRecipes, removeAll } = recipesSlice.actions;
 
-export const selectorRecipes = (state: RecipesSliceState) => state.recipes.data
+export const selectorRecipes = (state: RecipesSliceState) => state.recipes.data;
 
-export default recipesSlice.reducer
+export default recipesSlice.reducer;

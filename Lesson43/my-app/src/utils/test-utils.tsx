@@ -1,4 +1,4 @@
-import { Category, Recipe } from '../modules/recipes/models'
+import { Category, Recipe } from '../modules/recipes/models';
 
 export const mockRecipes: Recipe[] = [
   {
@@ -31,4 +31,4 @@ export const mockRecipes: Recipe[] = [
     strMeasure8: '1 (12 oz.)',
     strMeasure9: '3 cups',
   },
-]
+];

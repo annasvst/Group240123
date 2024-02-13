@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom'
-import { Typography } from '@mui/material'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
-import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
-import { Recipe } from '../models'
+import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import { Recipe } from '../models';
 // import { useRecipes } from '../RecipesProvider';
-import './styles.css'
-import { useSelector } from 'react-redux'
-import { selectorRecipes } from '../recipesSlice'
+import './styles.css';
+import { useSelector } from 'react-redux';
+import { selectorRecipes } from '../recipesSlice';
 
 export const RecipeList = () => {
-  const recipes = useSelector(selectorRecipes)
+  const recipes = useSelector(selectorRecipes);
 
   return (
     <div>
@@ -49,9 +49,9 @@ export const RecipeList = () => {
                 </Card>
               </Link>
             </li>
-          )
+          );
         })}
       </ul>
     </div>
-  )
-}
+  );
+};

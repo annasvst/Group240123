@@ -7,7 +7,7 @@ React Hooks are functions that let you "hook into" React state and lifecycle fea
 Allows you to add state to function components. Call setState to update the state, causing the component to re-render with the new state.
 
 ```javascript
-const [state, setState] = useState(initialState)
+const [state, setState] = useState(initialState);
 ```
 
 ## useEffect
@@ -19,8 +19,8 @@ useEffect(() => {
   // Side effects like data fetching, subscriptions, or manually changing the DOM.
   return () => {
     // Cleanup code (optional)
-  }
-}, [dependencies])
+  };
+}, [dependencies]);
 ```
 
 ## useContext
@@ -28,7 +28,7 @@ useEffect(() => {
 Provides a way to pass data through the component tree without having to pass props down manually at every level.
 
 ```javascript
-const contextValue = useContext(MyContext)
+const contextValue = useContext(MyContext);
 ```
 
 ## useReducer
@@ -36,7 +36,7 @@ const contextValue = useContext(MyContext)
 An alternative to useState, preferred for more complex state logic. It uses a reducer function for state updates.
 
 ```javascript
-const [state, dispatch] = useReducer(reducer, initialState)
+const [state, dispatch] = useReducer(reducer, initialState);
 ```
 
 ## useCallback
@@ -46,7 +46,7 @@ Returns a memoized callback that only changes if one of the dependencies has cha
 ```javascript
 const memoizedCallback = useCallback(() => {
   // Function that we want to memoize
-}, [dependencies])
+}, [dependencies]);
 ```
 
 ## useMemo
@@ -54,7 +54,7 @@ const memoizedCallback = useCallback(() => {
 Returns a memoized value. Recomputes the value only when one of the dependencies changes. Useful for expensive calculations.
 
 ```javascript
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 ```
 
 ## useCallback vs useMemo

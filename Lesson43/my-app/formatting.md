@@ -7,6 +7,7 @@ npm install --save-dev --save-exact prettier
 ```
 
 2. Create a Prettier Configuration File: To make Prettier work with your preferences, create a `.prettierrc` file in the root of your project. This file can be JSON or YAML format, and you can specify your settings here. For example:
+
 ```code
 {
   "semi": false,
@@ -25,10 +26,10 @@ npm install --save-dev --save-exact prettier
 ```code
 npx prettier --write .
 ```
+
 This command will format all files in your project based on the configurations you've specified.
 
 5. Integrate with ESLint (Optional): If you're using ESLint, you might want to integrate Prettier with ESLint. This helps avoid conflicts between the two. Install `eslint-config-prettier` and `eslint-plugin-prettier`:
-
 
 ```code
 npm install --save-dev eslint-config-prettier eslint-plugin-prettier
@@ -41,4 +42,3 @@ Then, update your `.eslintrc` configuration to extend prettier. This tells ESLin
   "extends": ["react-app", "plugin:prettier/recommended"]
 }
 ```
-

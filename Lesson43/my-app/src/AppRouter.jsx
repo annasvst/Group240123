@@ -1,10 +1,10 @@
-import { RecipeList } from './modules/recipes/RecipeList'
-import { SearchBar } from './modules/recipes/SearchBar'
-import { NewRecipe } from './modules/recipes/NewRecipe'
-import { UserPage } from './modules/user/UserPage'
-import { RecipeDetail } from './modules/recipes/RecipeDetail'
-import { Routes, Route } from 'react-router-dom'
-import { StyledPaper } from './components/StyledPaper'
+import { RecipeList } from './modules/recipes/RecipeList';
+import { SearchBar } from './modules/recipes/SearchBar';
+import { NewRecipe } from './modules/recipes/NewRecipe';
+import { UserPage } from './modules/user/UserPage';
+import { RecipeDetail } from './modules/recipes/RecipeDetail';
+import { Routes, Route } from 'react-router-dom';
+import { StyledPaper } from './components/StyledPaper';
 
 export const AppRouter = () => {
   return (
@@ -36,5 +36,5 @@ export const AppRouter = () => {
         }
       />
     </Routes>
-  )
-}
+  );
+};

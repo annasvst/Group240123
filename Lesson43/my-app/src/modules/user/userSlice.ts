@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { UserData } from './models'
+import { createSlice } from '@reduxjs/toolkit';
+import { UserData } from './models';
 
 interface UserSliceState {
-  user: UserInitialState
+  user: UserInitialState;
 }
 
 interface UserInitialState {
-  loggedIn: boolean
-  userData: UserData
+  loggedIn: boolean;
+  userData: UserData;
 }
 
 const initialState: UserInitialState = {
@@ -17,27 +17,27 @@ const initialState: UserInitialState = {
     userName: '',
     password: '',
   },
-}
+};
 
 export const userSlice = createSlice({
   name: 'user',
   initialState: initialState,
   reducers: {
     logIn: (state) => {
-      state.loggedIn = true
+      state.loggedIn = true;
     },
     logOut: (state) => {
-      state.loggedIn = false
+      state.loggedIn = false;
     },
     updateUserData: (state, action) => {
-      const { userName, email, password } = action.payload
-      state.userData = { ...state.userData, userName, email, password }
+      const { userName, email, password } = action.payload;
+      state.userData = { ...state.userData, userName, email, password };
     },
   },
-})
+});
 
-export const { logIn, logOut, updateUserData } = userSlice.actions
+export const { logIn, logOut, updateUserData } = userSlice.actions;
 
-export const userSelector = (state: UserSliceState) => state.user
+export const userSelector = (state: UserSliceState) => state.user;
 
-export default userSlice.reducer
+export default userSlice.reducer;

@@ -1,10 +1,10 @@
-import Paper from '@mui/material/Paper'
-import { useTheme } from '@mui/material/styles'
+import Paper from '@mui/material/Paper';
+import { useTheme } from '@mui/material/styles';
 
 interface StyledPaperProps {
-  className?: string
-  dataTestid?: string
-  children: React.ReactNode
+  className?: string;
+  dataTestid?: string;
+  children: React.ReactNode;
 }
 
 export const StyledPaper = ({
@@ -12,7 +12,7 @@ export const StyledPaper = ({
   dataTestid,
   children,
 }: StyledPaperProps) => {
-  const theme = useTheme()
+  const theme = useTheme();
 
   return (
     <Paper
@@ -28,5 +28,5 @@ export const StyledPaper = ({
     >
       {children}
     </Paper>
-  )
-}
+  );
+};

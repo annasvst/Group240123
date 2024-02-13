@@ -8,6 +8,7 @@ import { theme } from './theme';
 import { Navbar } from './components/Navbar';
 import { useDispatch } from 'react-redux';
 import { addRecipes } from './modules/recipes/recipesSlice';
+import { CounterComponent } from './components/Counter';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ export const App = () => {
       <ThemeProvider theme={theme}>
         <Navbar />
         <Box sx={{ mt: theme.spacing(10) }}>
+          <CounterComponent />
           <AppRouter />
         </Box>
       </ThemeProvider>

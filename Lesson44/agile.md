@@ -15,11 +15,7 @@ Agile breaks down projects into small, manageable chunks called "sprints" or "it
 Agile methodologies include frameworks like Scrum, Kanban, and Extreme Programming (XP). Each has its own set of practices and terminologies but shares the core principles of Agile.
 
 - Scrum is all about roles (Scrum Master, Product Owner, Development Team), ceremonies (Sprint Planning, Daily Standups, Sprint Review, Sprint Retrospective), and artifacts (Product Backlog, Sprint Backlog, Increment).
-- Kanban focuses on visualizing the work on a board to optimize the flow of tasks.
+- Kanban (=JIRA board) focuses on visualizing the work on a board to optimize the flow of tasks.
 - XP (Extreme Programming) emphasizes technical excellence, frequent releases, and customer satisfaction.
 
 Agile's pretty dynamic and requires a mindset shift from traditional methods, but it's powerful because it promotes efficiency, flexibility, and delivering value to customers quickly and continuously. Plus, it's fun! Teams get to work closely, share ideas freely, and see the impact of their work in real-time.
-
-
-
-

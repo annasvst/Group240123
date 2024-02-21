@@ -7,3 +7,4 @@
 ## Coding in general
 - Clean Code: By Robert C. Martin
 - The Pragmatic Programmer: by David Thomas and Andrew Hunt
+- Software Engineering at Google

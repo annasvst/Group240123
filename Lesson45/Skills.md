@@ -3,16 +3,16 @@
 React
 TypeScript
 JavaScript
+MaterialUI
 Responsive Web Design
 Version Control/Git
 Automated testing
 APIs (and JSON)
-Problem-solving
-Effective communication
 Web Performance Optimization
 Cross-Browser Development
 State Management (Redux or Context API)
-
+HTML
+CSS
 
 ## Soft skills
 Strong communication skills

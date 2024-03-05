@@ -4,7 +4,7 @@
 Start with a clear, professional profile photo. It doesn't have to be shot by a professional, but it should present you in a professional light—think smart, friendly, and approachable. Try using AI to generate a professional picture.
 
 - Headline
-Instead of just listing your current job title, use the headline space creatively. Mention your specializations or what you're passionate about. For example, "Aspiring Frontend Developer | Passionate About Building Seamless User Experiences ".
+Instead of just listing your current job title, use the headline space creatively. Mention your specializations or what you're passionate about. For example, "Aspiring Frontend Developer | Passionate About Building Seamless User Experiences".
 
 - Customized URL
 LinkedIn allows you to customize your profile URL. Make it clean and professional, ideally just your name if possible, which makes it easier to share and looks better on business cards or resumes.

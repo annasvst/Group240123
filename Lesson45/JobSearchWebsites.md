@@ -9,11 +9,10 @@ https://wellfound.com/ - you need to be careful with this one as not every start
 Glassdoor
 
 https://weworkremotely.com/
-
-Updated:
 remoteok.com 
 https://www.uptrail.com/
 https://dream.jobs/
+
 https://www.careerflow.ai/still-hiring
 https://gritsearch.com/
 https://www.kickresume.com/pyjama-jobs/
